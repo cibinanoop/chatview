@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075e54">
+  <title>ChatView — WhatsApp Chat Reader</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M16 3.2A12.3 12.3 0 0 0 5.4 21.7L4 28l6.5-1.7A12.3 12.3 0 1 0 16 3.2Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12.2 10.5c-.4-.8-.8-.8-1.2-.8-.3 0-.7 0-1 .4-.4.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.8c.2.3 2.5 4 6.1 5.4 3 .9 3.6.7 4.3.6.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.2-.4-.3-.9-.6s-2.3-1.1-2.7-1.2c-.4-.2-.7-.2-1 .2-.3.5-1 1.2-1.2 1.5-.2.3-.5.4-.9.1-.5-.2-1.9-.7-3.6-2.3-1.3-1.1-2.2-2.5-2.5-2.9-.3-.5 0-.7.2-1 .2-.2.5-.6.7-.8.2-.3.3-.5.5-.8.1-.3 0-.6 0-.8l-1.2-2.3Z" fill="currentColor"/></svg>
+        </div>
+        <div><div class="brand-name">ChatView</div><div class="brand-subtitle">PRIVATE CHAT READER</div></div>
+      </div>
+      <div class="topbar-actions">
+        <span class="privacy-pill"><span></span> Processed on this device</span>
+        <button id="themeBtn" class="icon-button" title="Toggle theme" aria-label="Toggle theme">☾</button>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <aside class="sidebar">
+        <div class="sidebar-heading"><div><h1>Your chats</h1><p>Import a WhatsApp text export</p></div><span class="round-icon">✉</span></div>
+        <label class="upload-card" for="fileInput" id="dropZone">
+          <input id="fileInput" type="file" accept=".txt,text/plain">
+          <span class="upload-icon">↑</span>
+          <strong>Open chat export</strong>
+          <span>Choose a .txt file or drop it here</span>
+          <small>Nothing is uploaded to a server</small>
+        </label>
+        <div class="sidebar-tools">
+          <label class="search-wrap"><span>⌕</span><input id="chatSearch" type="search" placeholder="Search messages"></label>
+        </div>
+        <div class="chat-list" id="chatList">
+          <div class="empty-chat"><div class="empty-chat-icon">☰</div><strong>No chat loaded</strong><span>Your imported conversation will appear here.</span></div>
+        </div>
+        <div class="sidebar-footer"><span class="lock">▣</span> Your chat stays in your browser</div>
+      </aside>
+
+      <section class="conversation">
+        <div class="chat-header" id="chatHeader">
+          <div class="avatar" id="headerAvatar">?</div>
+          <div class="chat-title"><strong id="chatTitle">Welcome to ChatView</strong><span id="chatStatus">Import a WhatsApp .txt file to begin</span></div>
+          <div class="header-controls">
+            <button class="text-action" id="copyAllBtn" disabled title="Copy all conversation">▢ <span>Copy chat</span></button>
+            <button class="icon-button" id="detailsBtn" title="Chat options" disabled>⋮</button>
+          </div>
+        </div>
+        <div class="setup-banner" id="setupBanner">
+          <div class="setup-art">☏</div>
+          <h2>Your conversation, beautifully readable.</h2>
+          <p>Open a WhatsApp chat export to view it in a familiar chat layout. Search, select, and copy individual messages or the entire conversation.</p>
+          <label for="fileInput" class="primary-button">Choose TXT file</label>
+          <div class="format-note">Supports WhatsApp text exports, including Malayalam and other Unicode text.</div>
+        </div>
+        <div class="message-area" id="messageArea" hidden>
+          <div class="date-hint">Messages are displayed from your exported chat</div>
+          <div id="messages"></div>
+        </div>
+        <div class="composer">
+          <button class="composer-plus" title="Copy selected text" id="copySelectionBtn" disabled>＋</button>
+          <div class="composer-placeholder" id="composerPlaceholder">Imported chat is read-only</div>
+          <button class="composer-send" title="Copy chat" id="composerCopyBtn" disabled>▢</button>
+        </div>
+      </section>
+    </section>
+    <footer class="app-footer"><span>CHATVIEW</span><span>Local-only · Read-only · No account required</span></footer>
+  </main>
+
+  <div class="modal-backdrop" id="settingsModal" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><h2 id="modalTitle">Chat display settings</h2><button id="closeModal" class="icon-button" aria-label="Close">×</button></div>
+      <p class="modal-description">Choose which participant's messages should appear on the right, like messages sent from your own phone.</p>
+      <label class="field-label" for="selfSender">My sender name</label>
+      <select id="selfSender"></select>
+      <div class="modal-actions"><button id="applySettings" class="primary-button">Apply settings</button></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
