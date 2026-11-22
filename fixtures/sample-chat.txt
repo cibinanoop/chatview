@@ -1,0 +1,8 @@
+14/11/26, 9:04 pm - Arun: Hey! The archive parser is ready.
+14/11/26, 9:05 pm - Meera 🌿: Nice — നന്നായിട്ടുണ്ട്!
+14/11/26, 9:06 pm - Arun: This is a multiline message.
+It has a second line with an emoji ✨ and punctuation.
+14/11/26, 9:07 pm - Meera 🌿: IMG-20261114-WA0001.jpg (file attached)
+14/11/26, 9:08 pm - Messages to this group are now secured with end-to-end encryption.
+14/11/26, 21:09 - Arun: See you soon: https://example.com/archive
+[14/11/26, 9:10 pm] Meera 🌿: iOS-style timestamp headers are supported too.

@@ -1,0 +1,13 @@
+{
+  "name": "ChatView - WhatsApp Chat Archive",
+  "short_name": "ChatView",
+  "description": "A private, local WhatsApp chat archive viewer.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#efeae2",
+  "theme_color": "#00a884",
+  "icons": [
+    { "src": "./assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+    "name":  "chatview",
+    "version":  "2.4.2",
+    "private":  true,
+    "type":  "module",
+    "description":  "Private, local WhatsApp chat archive viewer",
+    "scripts":  {
+                    "test":  "node --test tests/*.test.js",
+                    "check":  "node scripts/check.mjs"
+                },
+    "engines":  {
+                    "node":  "\u003e=18"
+                }
+}
